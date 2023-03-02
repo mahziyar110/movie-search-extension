@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			font-size: medium;
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #0c0b00;
+			color: white;
+		}
+
+		#search-form {
+			display: flex;
+			align-items: center;
+			margin: 10px;
+			font-size: large;
+		}
+
+		#search-bar {
+			padding: 10px;
+			width: 300px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 16px;
+			outline: none;
+			margin-right: 10px;
+		}
+
+		#search-btn {
+			font-size: 16px;
+		}
+
+		button {
+			background-color: #deb522;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			padding: 10px;
+			color: white;
+		}
+
+		button:active {
+			background-color: #ffa500;
+			/* change to a different color when clicked */
+			color: black;
+			/* change the text color to make it visible */
+		}
+
+		button:focus {
+			outline: none;
+			/* remove the default outline */
+			box-shadow: 0 0 0 3px rgba(222, 181, 34, 0.4);
+			/* add a custom outline */
+		}
+
+		button:active:focus {
+			background-color: #ffa500;
+			/* change to a different color when clicked */
+			color: black;
+			/* change the text color to make it visible */
+			outline: none;
+			/* remove the default outline */
+			box-shadow: 0 0 0 3px rgba(222, 181, 34, 0.4);
+			/* add a custom outline */
+		}
+
+		#main {
+			display: none;
+			flex-direction: row;
+		}
+
+		#poster-container {
+			display: flex;
+			justify-content: center;
+			margin-top: 5px;
+		}
+
+		#details-container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			margin-left: 10px;
+			width: 250px;
+			height: 250px;
+		}
+
+		#poster {
+			height: 200px;
+			width: 150px;
+			border-radius: 5%;
+		}
+
+		#imdb-link-text {
+			text-decoration: inherit;
+		}
+
+		#title {
+			font-weight: bold;
+			color: white;
+			font-size: large;
+		}
+
+		#message {
+			display: none;
+			align-self: flex-start;
+			margin-left: 10px;
+		}
+
+		#button-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: auto;
+			width: 100%;
+		}
+
+		/* Style the scrollbar */
+		::-webkit-scrollbar {
+			width: 5px;
+			background-color: #ffffff;
+		}
+
+		/* Style the scrollbar thumb */
+		::-webkit-scrollbar-thumb {
+			background-color: #deb522;
+			border-radius: 5px;
+		}
+
+		/* Style the scrollbar track */
+		::-webkit-scrollbar-track {
+			background-color: #ffffff;
+		}
+	</style>
+</head>
+
+<body>
+	<form id="search-form">
+		<input type="text" id="search-bar" placeholder="Search for a movie...">
+		<button type="submit" id="search-btn">Search</button>
+	</form>
+	<div id="main">
+		<div id="poster-container">
+			<a id="imdb-link" href="" target="_blank">
+				<img id="poster" src="../images/placeholder.png" alt="Movie poster" title="Go to IMDb">
+			</a>
+		</div>
+		<div id="details-container">
+			<div title="Go to IMDb"><a id="imdb-link-text" href="" target="_blank"><span id="title"></span></a><span
+					id="year"></span></div>
+			<div><span id="runtime"></span></div>
+			<div><span id="imdb-rating"></span></div>
+			<div><span id="director"></span></div>
+			<div><span id="cast"></span></div>
+			<br>
+			<div style="overflow: auto; margin-bottom: 5px;"><span id="plot"></span></div>
+			<div id="button-container">
+				<button id="prev-btn" title="Previous">&lt</button>
+				<button id="next-btn" title="Next">&gt</button>
+			</div>
+		</div>
+
+	</div>
+	<div id="message"></div>
+	<script src="popup.js"></script>
+</body>
+
+</html>

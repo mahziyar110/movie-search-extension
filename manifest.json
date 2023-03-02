@@ -1,0 +1,36 @@
+{
+  "name": "OMDb/IMDb Movie Search",
+  "version": "1.0.0",
+  "description": "Search for any movie and display its related information.",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "storage", "scripting", "contextMenus"],
+  "host_permissions": ["https://www.omdbapi.com/*"],
+  "commands": {
+    "search-imdb": {
+      "suggested_key": {
+        "default": "Alt+M"
+      },
+      "description": "Search IMDb for selected text"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup/popup.js"]
+    }
+  ]
+}
