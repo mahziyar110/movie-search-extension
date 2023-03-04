@@ -1,5 +1,5 @@
 {
-  "name": "OMDb/IMDb Movie Search",
+  "name": "IMDb Movie Search",
   "version": "1.0.0",
   "description": "Search for any movie and display its related information.",
   "manifest_version": 3,
