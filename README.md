@@ -1,6 +1,7 @@
 # Movie Search Extension
 
 Chrome extension to search for movies and displays related information via OMDb api. Right click on selected text and search on IMDb.<br>
+Link: https://chrome.google.com/webstore/detail/imdb-movie-search/egabglmdedhdebfhabfphfkibcaceknn
 
 ## Search for movies
 
